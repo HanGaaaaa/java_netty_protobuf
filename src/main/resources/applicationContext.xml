@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 开启注解 -->
+	<context:annotation-config />
+	
+	<bean class="kinghua.protodemo.SpringApplicationContext" />
+	
+	<bean id="mapperMgr" class="kinghua.protodemo.ServerCodePacketHandlerMapperMgr" init-method="init"/>
+
+	<bean id="clientPacketTransfer" class="kinghua.protodemo.ClientPacketTransfer">
+		<constructor-arg index="0" ref="mapperMgr"></constructor-arg>
+	</bean>
+</beans>

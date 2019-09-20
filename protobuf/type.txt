@@ -1,0 +1,6 @@
+c2s_Login = 0,
+s2c_Login = 1,
+c2s_get_device_list = 2,
+s2c_get_device_list = 3,
+c2s_select_device = 4,
+s2c_select_device = 5,

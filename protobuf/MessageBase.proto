@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+message ClientPacketHeader{
+	required int32 type=1;
+}
+
+
+message ClientPacket{
+	required ClientPacketHeader header=1;
+	required bytes content=2;
+}
+
+
+message ServerPacketHeader{
+	required int32 type=1;
+}
+
+
+message ServerPacket{
+	required ServerPacketHeader header=1;
+	required bytes content=2;
+}

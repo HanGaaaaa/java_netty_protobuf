@@ -1,0 +1,40 @@
+syntax = "proto2";
+
+
+message c2s_get_device_list{
+}
+
+
+message s2c_get_device_list{
+    optional int32 result = 1;
+    optional int32 reason = 2;
+    repeated device_info device_list = 3;
+}
+
+
+message c2s_select_device{
+    optional int32 id = 1;
+}
+
+
+message s2c_select_device{
+    optional int32 result = 1;
+    optional int32 reason = 2;
+    optional device_info selected_device_info = 3;
+}
+
+
+message device_info{
+    optional int32 device_id = 1;
+    optional string device_ip = 2;
+    optional string device_name = 3;
+    optional string road = 4;
+    optional int32 battary = 5;
+    repeated video_info video_list = 6;
+    optional string key = 7;
+    optional int32 port = 8;
+}
+
+message video_info{
+    optional string url = 1;
+}
